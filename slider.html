@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<style type="text/css">
+
+	body{
+		margin:0;
+		padding: 0;
+	}
+	* {
+	 box-sizing: border-box;
+}
+ *::before, *::after {
+	 box-sizing: border-box;
+}
+
+ .container {
+	 width:100%;
+	 margin: 0;
+}
+ .slider-arrow {
+	 position: relative;
+	 display: inline-block;
+	 cursor: pointer;
+	 outline: none;
+	 border: 0;
+	 vertical-align: middle;
+	 text-decoration: none;
+	 background: transparent;
+	 padding: 20px 0px;
+	 color: #3c376f;
+	 font-size: 2rem;
+}
+ .slider-arrow span {
+	 position: relative;
+	 display: inline-block;
+	 transform: translateX(0);
+	 transition: transform 0.3s ease;
+}
+ .previous:hover span {
+	 transform: translateX(-10px) scale(1.2);
+}
+ .next:hover span {
+	 transform: translateX(10px) scale(1.2);
+}
+ .slider-nav ul {
+	 list-style: none;
+	 margin: 0;
+	 padding: 0;
+	 display: flex;
+	 justify-content: center;
+}
+ .slider-nav li {
+	 display: flex;
+	 flex: 2;
+	 text-align: center;
+}
+ .slider-images {
+	 width: 100%;
+	 height: 400px;
+	 display: none;
+	 box-shadow: 10px 10px 20px 0 rgba(94, 47, 59, 0.2);
+}
+ .slider-images.active {
+	 display: block;
+	 animation: fadeImg 0.8s;
+}
+ .slider-nav .arrow{
+	 flex: 0 0 15%;
+
+}
+
+
+.slider-nav .arrow.left{
+     position: absolute;
+	 left: 2%;
+	 top: 200px;
+}
+
+
+.slider-nav .arrow.right{
+     position: absolute;
+	 right:2%;
+	 top: 200px;
+}
+
+ .slider-nav a {
+	 flex-basis: 100%;
+	 display: flex;
+	 align-items: center;
+}
+ .slider-nav span {
+	 display: block;
+	 width: 100%;
+}
+ @keyframes fadeImg {
+	 from {
+		 opacity: 0;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ 
+</style>
+
+<body>
+<div class="container">
+  <div class="slider">
+    <img class="slider-images active" src="https://source.unsplash.com/gKk9rpyDryU">
+    <img class="slider-images"src="https://source.unsplash.com/VFGEhLznjPU">
+    <img class="slider-images" src="https://source.unsplash.com/InR-EhiO_js">
+  </div>
+  <div class="slider-nav">
+    <ul>
+      <li class="arrow left">
+        <div class="slider-arrow previous">
+          <span>
+            <i class="ion-arrow-left-c"></i>
+          </span>
+        </div>
+      </li>
+      <li class="arrow right">
+        <div class="slider-arrow next">
+          <span>
+            <i class="ion-arrow-right-c"></i>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+	const items = document.querySelectorAll('.slider-images');
+const itemCount = items.length;
+const nextItem = document.querySelector('.next');
+const previousItem = document.querySelector('.previous');
+let count = 0;
+
+function showNextItem() {
+  items[count].classList.remove('active');
+
+  if(count < itemCount - 1) {
+    count++;
+  } else {
+    count = 0;
+  }
+
+  items[count].classList.add('active');
+  console.log(count);
+}
+
+function showPreviousItem() {
+  items[count].classList.remove('active');
+
+  if(count > 0) {
+    count--;
+  } else {
+    count = itemCount - 1;
+  }
+
+  items[count].classList.add('active');
+  console.log(count);
+}
+
+function keyPress(e) {
+  e = e || window.event;
+  
+  if (e.keyCode == '37') {
+    showPreviousItem();
+  } else if (e.keyCode == '39') {
+    showNextItem();
+  }
+}
+
+nextItem.addEventListener('click', showNextItem);
+previousItem.addEventListener('click', showPreviousItem);
+document.addEventListener('keydown', keyPress);
+</script>
+</body>
+</html>
