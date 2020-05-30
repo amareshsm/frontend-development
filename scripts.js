@@ -14,7 +14,6 @@ $burger.onclick = () => {
 };
 
 
-
 const items = document.querySelectorAll('.slider-images');
 const itemCount = items.length;
 const nextItem = document.querySelector('.next');
