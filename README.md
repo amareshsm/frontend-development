@@ -1,2 +1,2 @@
-dome :https://frontend-taral-corporation.netlify.app/
+dome :https://frontend-development.netlify.app/
 # frontend-development
