@@ -531,7 +531,7 @@ color: #30a156d4;
 .footer-section{
   display: flex;
   padding: 40px;
- background-color: lightblue;
+ background-color: white;
  margin-top: -20px;
 }
 
@@ -586,7 +586,7 @@ color: #30a156d4;
 }
 
 .footer-section .div.contact .details .phone {
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -602,7 +602,7 @@ color: #30a156d4;
   align-items: center;
   justify-content: space-around;
   font-size: 18px;
-  background-color: #3b28d1;
+  background-color: #3b28d1e6;
   color: white;
 }
 
@@ -612,6 +612,8 @@ color: #30a156d4;
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
+
+
   .about-header {
     flex-direction: column;
     height: 110px;
@@ -664,9 +666,9 @@ color: #30a156d4;
 	background-color: rgb(248, 248, 248);
 	margin:3px;
 	border-radius: 2px;
-	-webkit-box-shadow: 0px 0px 15px 1px  rgba(202, 202, 202, 0.75);
--moz-box-shadow: 0px 0px 15px 1px  rgba(202, 202, 202, 0.75);
-box-shadow: 0px 0px 15px 1px  rgba(202, 202, 202, 0.75);
+	-webkit-box-shadow: 0px 4px 15px 1px  rgba(202, 202, 202, 0.75);
+-moz-box-shadow: 0px 4px 15px 1px  rgba(202, 202, 202, 0.75);
+box-shadow: 0px 4px 15px 1px rgba(202, 202, 202, 0.75);
 }
 
 .experience-section .images{
@@ -712,7 +714,7 @@ box-shadow: 0px 0px 15px 1px  rgba(202, 202, 202, 0.75);
 .business-reg-section .content{
   padding:18px;
   flex-direction: column;
-
+  margin: 20px
 }
 
 .business-reg-section .content .button{
@@ -926,7 +928,7 @@ box-shadow: 0px 0px 15px 1px  rgba(202, 202, 202, 0.75);
 }
 
 .burger-clicked {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 45px;
   z-index: 9;
@@ -954,7 +956,6 @@ box-shadow: 0px 0px 15px 1px  rgba(202, 202, 202, 0.75);
 }
 
 
-/*slider css */
 
 
 

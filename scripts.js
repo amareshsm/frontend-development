@@ -1,5 +1,6 @@
 const $burger = document.querySelector(".burger");
 const $navLinks = document.querySelector(".nav-links");
+console.log($navLinks.children)
 const $navLinks_ = document.querySelectorAll(".nav-links li",".nav-links a button");
 $burger.onclick = () => {
     $navLinks.classList.toggle("nav-clicked");
@@ -12,7 +13,6 @@ $burger.onclick = () => {
         }
     });
 };
-
 
 const items = document.querySelectorAll('.slider-images');
 const itemCount = items.length;
