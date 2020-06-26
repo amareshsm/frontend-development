@@ -14,6 +14,20 @@ $burger.onclick = () => {
     });
 };
 
+document.querySelector('.nav-links').addEventListener('click',function(){
+  $navLinks.classList.toggle("nav-clicked");
+ $burger.classList.toggle("burger-clicked");
+   $navLinks_.forEach((link, index) => {
+     if(link.style.animation){
+         link.style.animation = "";
+     } else {
+
+         link.style.animation = `navLinkAnimation 0.5s ease forwards ${index/5+0.5}s`;
+     }
+ });
+});
+
+
 const items = document.querySelectorAll('.slider-images');
 const itemCount = items.length;
 const nextItem = document.querySelector('.next');
